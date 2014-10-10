@@ -1,16 +1,15 @@
 <h1>Welcome to Chitter!</h1>
 
 
+  <div id="new-peep">
 
-<div id="new-peep">
+    <form action'/' method="post">
+  <h3>Peep:</h3> <input type="text" name="peep" autocomplete="off"></br></br>  
+        <input type="submit" value="Peep!">
+    </form>
 
-  <form action'/peep' method="post">
-Peep: <input type="text" name="peep">
-      <input type="submit" value="Peep!">
-  </form>
+  </div>
 
-</div>
-
-<% @peeps.reverse.each do |peep| %>
-    <li><%= peep.peep %></li>
+<% @peeps.reverse.each do |list| %>
+    <li><%= list.peep %></li>
   <% end %>

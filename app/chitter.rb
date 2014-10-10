@@ -3,6 +3,7 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 
 require_relative 'peeps' 
+require_relative 'user' 
 
 
 DataMapper.finalize
@@ -23,6 +24,18 @@ set :views, Proc.new { File.join(root, "..", "views") }
   post '/' do 
     peep = params[:peep]
     Peeps.create(:peep => peep)
+    redirect to '/'
+  end
+
+
+get '/users/new' do
+
+  erb :"users/new"
+end
+
+  post "/users/new" do 
+    email = params[:email]
+    User.create(:email => email)
     redirect to '/'
   end
 
