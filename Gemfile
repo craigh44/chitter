@@ -6,3 +6,5 @@ gem "cucumber"
 gem "cucumber-sinatra"
 gem "rspec"
 gem "capybara"
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
