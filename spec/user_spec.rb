@@ -8,5 +8,4 @@ describe Peeps do
   end
 
   
-
 end

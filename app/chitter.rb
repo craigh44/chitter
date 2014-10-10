@@ -11,8 +11,19 @@ DataMapper.auto_upgrade!
 require 'sinatra/base'
 
 class Chitter < Sinatra::Base
+
+set :views, Proc.new { File.join(root, "..", "views") }
+
+
   get '/' do
-    'Hello Chitter!'
+    @peeps = Peeps.all
+    erb :index
+  end
+
+  post '/' do 
+    peep = params[:peep]
+    Peeps.create(:peep => peep)
+    redirect to '/'
   end
 
   # start the server if ruby file executed directly
