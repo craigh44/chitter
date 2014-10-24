@@ -1,20 +1,40 @@
-<h1>Welcome to Chitter!</h1>
 
- <% if current_user %>
+<nav><% if current_user %>
     Welcome, <%= current_user.user_name %>
 <% else %>
 
-<a href="/users/new" >Sign Up</a>
+<ul>
+	<li><a href="/users/new" >Sign Up</a></li>
   <% end %>
-  <div id="new-peep">
+  <li><a href="#">Sign in</a></li>
+  <form method="post" action="/users/new">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Sign out">
+    </form>
+
+</ul>
+</nav>
+
+
+<section class="title">
+<h1>Welcome to Chitter!</h1>
+</section>
+
+
+
+
+ <section id="new-peeps">
+
 
     <form action'/' method="post">
   <h3>Peep:</h3> <input type="text" name="peep" autocomplete="off"></br></br>  
         <input type="submit" value="Peep!">
     </form>
 
-  </div>
+ 
 
 <% @peeps.reverse.each do |list| %>
     <li><%= list.peep %></li>
   <% end %>
+
+  </section>

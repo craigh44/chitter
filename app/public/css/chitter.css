@@ -1,0 +1,38 @@
+* {
+	font-family: Helvetica;
+}
+
+
+nav {
+	display: block;
+  background-color: white;
+	height: 60px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+
+ul {
+	display: inline;
+}
+
+
+body {
+	background-color: black;
+  padding:0;
+  margin:0;
+  }
+
+h1 {
+	text-align: center;
+	text-decoration: underline;
+	color: white;
+}
+
+section {
+  text-align: center;
+	color: white;
+}
+
+a {
+	color: grey;
+}
